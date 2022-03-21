@@ -79,7 +79,7 @@ resource "libvirt_domain" "this_dataplane" {
   memory = var.dataplane_memory
   vcpu   = var.dataplane_vcpu
 
-  cloudinit = libvirt_cloudinit_disk.commoninit.id
+  cloudinit = libvirt_cloudinit_disk.this.id
   network_interface {
     hostname = "dataplane${count.index}"
     network_name = "default"

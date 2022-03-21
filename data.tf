@@ -9,5 +9,5 @@ data "template_file" "user_data" {
 
 # generate the network_config file to build into the ubuntu image
 data "template_file" "network_config" {
-  template = templatefile("${path.module}/templates/cloudinit/network_config.cfg", {})
+  template = templatefile("${path.module}/templates/cloudinit/network_config.cfg.tpl", {})
 }
