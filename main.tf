@@ -1,12 +1,12 @@
 resource "random_password" "this_cloud_user" {
-  count = var.cloud_user_pw != "" ? 1 : 0
+  count = var.cloud_user_pw == "" ? 1 : 0
   length           = 16
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
 
 resource "random_password" "this_root_user" {
-  count = var.root_pw != "" ? 1 : 0
+  count = var.root_pw == "" ? 1 : 0
   length           = 16
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
