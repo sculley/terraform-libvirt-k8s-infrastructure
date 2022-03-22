@@ -37,8 +37,8 @@ resource "libvirt_volume" "this_dataplane" {
 
 resource "libvirt_cloudinit_disk" "this" {
   name           = "commoninit.iso"
-  user_data      = var.cloud_init_user_data != "" ? var.cloud_init_user_data : data.template_file.user_data.rendered
-  network_config = var.cloud_init_network_config != "" ? var.cloud_init_network_config : data.template_file.network_config.rendered
+  user_data      = var.cloud_init_user_data != "" ? var.cloud_init_user_data : data.template_file.user_data[0].rendered
+  network_config = var.cloud_init_network_config != "" ? var.cloud_init_network_config : data.template_file.network_config[0].rendered
   pool           = libvirt_pool.this.name
 }
 
