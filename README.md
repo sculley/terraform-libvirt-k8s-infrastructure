@@ -1,7 +1,7 @@
 # terraform-libvirt-k8s-infrastructure
 
 <p align="center">
-    <img src="./terraform-libvirt-k8s-infrastructure.png" alt="terraform-libvirt-k8s-infrastructure" title="terraform-libvirt-k8s-infrastructure" width="960"/>
+    <img src="https://raw.githubusercontent.com/sculley/terraform-libvirt-k8s-infrastructure/main/terraform-libvirt-k8s-infrastructure.png" alt="terraform-libvirt-k8s-infrastructure" title="terraform-libvirt-k8s-infrastructure" width="960"/>
 </p>
 
 This Terraform module will provision the libvirt infrastructure for a kubernetes cluster (pool, volumes & domains)
