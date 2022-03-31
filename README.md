@@ -10,7 +10,7 @@ This Terraform module will provision the libvirt infrastructure for a kubernetes
 
 The following example is a basic example which requires no more than the password for the nodes, the password is SHA512 hashed and stored in the cloud-init script
 
-```json
+```yaml
 resource "libvirt_pool" "volumes" {
   name = "volumes"
   type = "dir"
@@ -29,7 +29,7 @@ module "cluster_infrastructure" {
 
 A more advanced example is below, in this example we provide a custom cloud-init file and specify some settings for the controlplane nodes and node_groups such as the number of controlplane nodes and nodes in the node_group. We also update the memory set.
 
-```json
+```yaml
 data "template_file" "user_data" {
   template = templatefile("${path.module}/templates/cloudinit/cloud_init.cfg.tpl", {
     cloud_user_public_key = var.cloud_user_public_key
