@@ -4,6 +4,7 @@ resource "libvirt_volume" "this" {
   pool   = var.pool
   source = var.os_source
   format = "qcow2"
+  size = var.size
 }
 
 resource "libvirt_cloudinit_disk" "this" {

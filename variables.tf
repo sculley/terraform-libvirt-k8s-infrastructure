@@ -65,3 +65,15 @@ variable "pool" {
   description = "The libvirt pool to store node disks/volumes"
   type = string
 }
+
+variable "controlplane_vol_size" {
+  description = "The size in bytes of the controlplane volume (must be in 1073741824 bytes not 10MB, 10GB) Defaults to 10GB (in bytes)."
+  type = string
+  default = "10737418240"
+}
+
+variable "dataplane_vol_size" {
+  description = "The size in bytes of the dataplane volume (must be in 1073741824 bytes not 10MB, 10GB) Defaults to 10GB (in bytes)."
+  type = string
+  default = "10737418240"
+}

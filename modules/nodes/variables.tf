@@ -37,3 +37,9 @@ variable "pool" {
   description = "The storage pool where the dataplane volumes will be created"
   type = string
 }
+
+variable "size" {
+  description = "The size in bytes of the dataplane volume (must be in 1073741824 bytes not 10MB, 10GB) Defaults to 10GB (in bytes)."
+  type = string
+  default = "10737418240"
+}

@@ -11,6 +11,7 @@ module "controlplane_nodes" {
   cloud_init_network_config = var.cloud_init_network_config != "" ? var.cloud_init_network_config : data.template_file.network_config.rendered
   cloud_init_user_data = var.cloud_init_user_data != "" ? var.cloud_init_user_data : data.template_file.user_data.rendered
   pool = var.pool
+  size = var.controlplane_vol_size
 }
 
 module "nodes" {
@@ -26,6 +27,7 @@ module "nodes" {
   cloud_init_network_config = var.cloud_init_network_config != "" ? var.cloud_init_network_config : data.template_file.network_config.rendered
   cloud_init_user_data = var.cloud_init_user_data != "" ? var.cloud_init_user_data : data.template_file.user_data.rendered
   pool = var.pool
+  size = var.dataplane_vol_size
 
   depends_on = [
     module.controlplane_nodes
