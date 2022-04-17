@@ -36,3 +36,9 @@ variable "os_source" {
 variable "pool" {
   description = "The storage pool where the controlplane volumes will be created"
 }
+
+variable "size" {
+  description = "The size in bytes of the controlplane volume (must be in 1073741824 bytes not 10MB, 10GB) Defaults to 10GB (in bytes)."
+  type = string
+  default = "10737418240"
+}
